@@ -1,32 +1,86 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement2D : MonoBehaviour
+// A simple 2D movement controller for a player in Unity
+public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float inputX;
-    private int facing = 1;
+    #region Gameplay properties
 
-    private void Awake()
+    // Horizontal player keyboard input
+    //  -1 = Left
+    //   0 = No input
+    //   1 = Right
+    private float playerInput = 0;
+
+    // Horizontal player speed
+    [SerializeField] private float speed = 250;
+
+    #endregion
+
+    #region Component references
+
+    private Rigidbody2D rb;
+
+    #endregion
+
+    #region Initialisation methods
+
+    // Initialises this component
+    // (NB: Is called automatically before the first frame update)
+    void Start()
     {
+        // Get component references
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    #endregion
+
+    #region Gameplay methods
+
+    // Is called automatically every graphics frame
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        // Detect and store horizontal player input   
+        playerInput = Input.GetAxisRaw("Horizontal");
+
+        // NB: Here, you might want to set the player's animation,
+        // e.g. idle or walking
+
+        // Swap the player sprite scale to face the movement direction
+        SwapSprite();
+    }
+
+    // Swap the player sprite scale to face the movement direction
+    void SwapSprite()
+    {
+        // Right
+        if (playerInput > 0)
         {
-            rb.AddForce(new Vector2(-0.01f, 0f), ForceMode2D.Impulse);
+            transform.localScale = new Vector3(
+                Mathf.Abs(transform.localScale.x),
+                transform.localScale.y,
+                transform.localScale.z
+            );
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        // Left
+        else if (playerInput < 0)
         {
-            rb.AddForce(new Vector2(0.01f, 0f), ForceMode2D.Impulse);
+            transform.localScale = new Vector3(
+                -1 * Mathf.Abs(transform.localScale.x),
+                transform.localScale.y,
+                transform.localScale.z
+            );
         }
     }
-    
-    private void OnMove(InputValue value)
+
+    // Is called automatically every physics step
+    void FixedUpdate()
     {
-        Debug.Log("Hi");
+        // Move the player horizontally
+        rb.linearVelocity = new Vector2(
+            playerInput * speed,
+            0
+        );
     }
+
+    #endregion
 }
