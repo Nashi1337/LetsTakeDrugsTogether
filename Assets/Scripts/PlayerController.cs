@@ -15,6 +15,15 @@ public class PlayerController : MonoBehaviour
     public bool topDown = false;
     
     private Rigidbody2D rb;
+
+    private bool justTeleported = false;
+    private float lastTeleportTime = 999f;
+    private float teleportCooldown = 0.1f;
+    
+    private bool key1 = false;
+    private bool key2 = false;
+    private bool key3 = false;
+    private bool key4 = false;
     
     void Start()
     {
@@ -33,7 +42,7 @@ public class PlayerController : MonoBehaviour
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
 
         if(!topDown)
-        SwapSprite();
+            SwapSprite();
     }
 
     void SwapSprite()
@@ -91,6 +100,40 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("TopDownTriggerZone"))
         {
             ToggleTopDown();
+        }
+
+        if (other.CompareTag("Key"))
+        {
+            switch (other.GetComponent<Key>().index)
+            {
+                case 1: key1 = true; break;
+                case 2: key2 = true; break;
+                case 3: key3 = true; break;
+                case 4: key4 = true; break;
+                default: break;
+            }
+            //Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("Teleporter"))
+        {
+            if (justTeleported && Time.time - lastTeleportTime < teleportCooldown)
+                return;
+            var tp = other.GetComponent<teleporter>();
+            if (tp == null || tp.whereTo == null)
+                return;
+
+            bool teleportToLeft = tp.whereTo.position.x < other.GetComponentInParent<Transform>().position.x;
+            if (teleportToLeft && horizontalPlayerInput < 0)
+                return;
+            if (!teleportToLeft && horizontalPlayerInput > 0)
+                return;
+            float offsetX = transform.position.x - other.transform.position.x;
+            transform.position = new Vector3(
+                tp.whereTo.position.x + offsetX,
+                transform.position.y,
+                transform.position.z
+            );
         }
     }
     
