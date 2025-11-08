@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
@@ -20,6 +21,11 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject lockedDoor;
     [SerializeField] private GameObject closedDoor;
     [SerializeField] private GameObject openDoor;
+
+    public enum DoorState { NotEntered, Entered, Finished};
+    public DoorState currentDoorState = DoorState.NotEntered;
+    public UnityEvent myEvent;
+    public UnityEvent EnteredRoomEvent;
     
     void Start()
     {
@@ -37,11 +43,15 @@ public class Door : MonoBehaviour
             verticalPlayerInput = Input.GetAxisRaw("Vertical");
             if (verticalPlayerInput > 0 && hasDoorOpened)
             {
-                if(!player.topDown)
+                if (!player.topDown)
+                {
                     GoToRoomPosition();
+                    currentDoorState = DoorState.Entered;
+                    EnteredRoomEvent.Invoke();
+                }
             }
 
-            if (verticalPlayerInput < 0 && hasPlayerEnteredDoor)
+            if (verticalPlayerInput < 0 && hasPlayerEnteredDoor && currentDoorState == DoorState.Finished)
             {
                 if(player.topDown)
                     GoToHallwayPosition();
@@ -120,5 +130,13 @@ public class Door : MonoBehaviour
             closedDoor.SetActive(closedBool);
             openDoor.SetActive(openBool);
         }
+    }
+
+    public void RoomFinished()
+    {
+        if(currentDoorState != DoorState.Finished)
+        myEvent.Invoke();
+       currentDoorState = DoorState.Finished;
+        
     }
 }

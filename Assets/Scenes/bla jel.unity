@@ -728,6 +728,17 @@ MonoBehaviour:
   isAttached: 0
   maxTime: 1
   currentTime: 0
+--- !u!114 &975099009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7654782120064271161, guid: 4d17c0d1ba771c546a8ac46210062831, type: 3}
+  m_PrefabInstance: {fileID: 1795075960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aefb3686354fd04cb15c3f9b651ff62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027530744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1170,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+--- !u!1 &1405533168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1405533170}
+  - component: {fileID: 1405533169}
+  m_Layer: 0
+  m_Name: PaletteSwapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1405533169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405533168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bf057b20edf484bb4ea43323d654e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  display: {fileID: 975099009}
+  swapInterval: 0.1
+--- !u!4 &1405533170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405533168}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.0695, y: 1.2142, z: -15}
+  m_LocalScale: {x: 0.28964496, y: 0.28964496, z: 0.28964496}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1424395316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1596,6 +1653,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 80236596}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1912905887}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: RoomFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &2030638888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1927,62 @@ PrefabInstance:
     - target: {fileID: 3478351522424590943, guid: 8787c099918ccb443a41653bc7968050, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1405533169}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapPaletteStandard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1405533169}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapPaletteOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaletteSwapper, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PaletteSwapper, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034295776656138927, guid: 8787c099918ccb443a41653bc7968050, type: 3}
+      propertyPath: EnteredRoomEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5421822989419442571, guid: 8787c099918ccb443a41653bc7968050, type: 3}
       propertyPath: m_Name
@@ -2204,6 +2341,7 @@ SceneRoots:
   - {fileID: 1795075960}
   - {fileID: 504766363042855816}
   - {fileID: 2126957763662474199}
+  - {fileID: 1405533170}
   - {fileID: 2030638891}
   - {fileID: 725027374}
   - {fileID: 1243746629}
