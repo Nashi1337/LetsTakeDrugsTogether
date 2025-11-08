@@ -7,6 +7,7 @@ TagManager:
   - TopDownTriggerZone
   - Key
   - Teleporter
+  - Anomaly
   layers:
   - Default
   - TransparentFX
