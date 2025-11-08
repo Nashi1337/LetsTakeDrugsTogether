@@ -1,59 +1,44 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-// A simple 2D movement controller for a player in Unity
 public class PlayerController : MonoBehaviour
 {
-    #region Gameplay properties
-
     // Horizontal player keyboard input
     //  -1 = Left
     //   0 = No input
     //   1 = Right
-    private float playerInput = 0;
+    private float horizontalPlayerInput = 0;
+    private float verticalPlayerInput = 0;
 
-    // Horizontal player speed
     [SerializeField] private float speed = 250;
-
-    #endregion
-
-    #region Component references
-
+    public bool topDown = false;
+    
     private Rigidbody2D rb;
-
-    #endregion
-
-    #region Initialisation methods
-
-    // Initialises this component
-    // (NB: Is called automatically before the first frame update)
+    
     void Start()
     {
-        // Get component references
         rb = GetComponent<Rigidbody2D>();
     }
 
-    #endregion
+    public void ToggleTopDown()
+    {
+        topDown = !topDown;
+        rb.gravityScale = topDown ? 0 : 1;
+    }
 
-    #region Gameplay methods
-
-    // Is called automatically every graphics frame
     void Update()
     {
-        // Detect and store horizontal player input   
-        playerInput = Input.GetAxisRaw("Horizontal");
+        horizontalPlayerInput = Input.GetAxisRaw("Horizontal");
+        verticalPlayerInput = Input.GetAxisRaw("Vertical");
 
-        // NB: Here, you might want to set the player's animation,
-        // e.g. idle or walking
-
-        // Swap the player sprite scale to face the movement direction
         SwapSprite();
     }
 
-    // Swap the player sprite scale to face the movement direction
     void SwapSprite()
     {
         // Right
-        if (playerInput > 0)
+        if (horizontalPlayerInput > 0)
         {
             transform.localScale = new Vector3(
                 Mathf.Abs(transform.localScale.x),
@@ -62,7 +47,7 @@ public class PlayerController : MonoBehaviour
             );
         }
         // Left
-        else if (playerInput < 0)
+        else if (horizontalPlayerInput < 0)
         {
             transform.localScale = new Vector3(
                 -1 * Mathf.Abs(transform.localScale.x),
@@ -72,15 +57,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Is called automatically every physics step
     void FixedUpdate()
     {
-        // Move the player horizontally
-        rb.linearVelocity = new Vector2(
-            playerInput * speed,
-            0
-        );
+        if (!topDown)
+        {
+            float vx = horizontalPlayerInput * speed;
+            rb.linearVelocity = new Vector2(vx, rb.linearVelocityY);
+        }
+        else
+        {
+            float h = horizontalPlayerInput;
+            float v = verticalPlayerInput;
+
+            if (Mathf.Abs(h) > Mathf.Abs(v))
+            {
+                rb.linearVelocity = new Vector2(h * speed, 0f);
+            }
+            else if (Mathf.Abs(v) > 0f)
+            {
+                rb.linearVelocity = new Vector2(0f, v * speed);
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+        }
     }
 
-    #endregion
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("TopDownTriggerZone"))
+        {
+            ToggleTopDown();
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("TopDownTriggerZone"))
+        {
+            ToggleTopDown();
+        }
+    }
 }
