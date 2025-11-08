@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Key"))
         {
+            /**
             switch (other.GetComponent<Key>().index)
             {
                 case 1: key1 = true; break;
@@ -111,6 +112,12 @@ public class PlayerController : MonoBehaviour
                 case 3: key3 = true; break;
                 case 4: key4 = true; break;
                 default: break;
+            }
+           */
+            KeyEvent keyEvent = other.GetComponent<KeyEvent>();
+            if (other.GetComponent<KeyEvent>() != null)
+            {
+                keyEvent.DoEvent();
             }
             //Destroy(other.gameObject);
         }

@@ -6,7 +6,9 @@ public class Key : MonoBehaviour
     [SerializeField] private float preferredDistance = 0.5f;
     [SerializeField] private float attractionStrength = 12f;
     [SerializeField] private float repulsionStrength = 25f;
-    [SerializeField] private float maxSpeed = 6f; 
+    [SerializeField] private float maxSpeed = 6f;
+
+    public float sizeMultiplier;
 
     private Rigidbody2D rb;
     private Transform player;
@@ -62,7 +64,7 @@ public class Key : MonoBehaviour
 
         player = other.transform;
         isFollowing = true;
-        transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+        transform.localScale = new Vector3(sizeMultiplier,sizeMultiplier,sizeMultiplier);
 
         var col = GetComponent<Collider2D>();
         if (col != null)

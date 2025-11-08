@@ -89,6 +89,11 @@ public class Door : MonoBehaviour
         hasDoorOpened = false;
     }
 
+    public void UnlockDoor()
+    {
+        isLocked = false;
+    }
+
     public void GoToRoomPosition()
     {
         player.transform.position = roomTransform.position;
