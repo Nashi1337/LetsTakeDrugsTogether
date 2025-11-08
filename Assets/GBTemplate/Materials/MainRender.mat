@@ -84,7 +84,7 @@ Material:
     - _DstBlend: 0
     - _EnableExternalAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fade: 0
+    - _Fade: 0.25
     - _Fade_Max_Tolerance: 2
     - _GlossMapScale: 0
     - _Glossiness: 0
