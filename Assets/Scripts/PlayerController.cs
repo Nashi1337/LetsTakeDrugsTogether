@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -97,7 +98,8 @@ public class PlayerController : MonoBehaviour
         {
             ToggleTopDown();
             CameraPosition targetTransform = other.gameObject.GetComponentInChildren<CameraPosition>();
-            cameraController.currentPosition = targetTransform.gameObject.transform;
+            if(cameraController != null)
+                cameraController.currentPosition = targetTransform.gameObject.transform;
         }
 
         if (other.CompareTag("Key"))
@@ -130,13 +132,25 @@ public class PlayerController : MonoBehaviour
             );
         }
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Anomaly"))
+        {
+            if(Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("TopDownTriggerZone"))
         {
             ToggleTopDown();
-            cameraController.currentPosition = cameraController.playerPosition;
+            if(cameraController != null)
+                cameraController.currentPosition = cameraController.playerPosition;
         }
     }
 }
