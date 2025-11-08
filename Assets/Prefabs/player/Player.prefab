@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7362140557420175207}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ObjectPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345953611250010138}
   - component: {fileID: 716466431681710603}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 5235542573732973048}
   - component: {fileID: 2452669010616723482}
   - component: {fileID: 2855990605817889705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   placeHolder: {fileID: 482531831264310181}
 --- !u!1 &8591035307955635877
 GameObject:
@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6060581741589250177}
   - component: {fileID: 8565919469310229151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CameraPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

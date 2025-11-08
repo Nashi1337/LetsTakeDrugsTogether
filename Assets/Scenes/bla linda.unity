@@ -633,7 +633,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 743296310}
+        m_TargetAssemblyTypeName: PushableObject, Assembly-CSharp
+        m_MethodName: PushMyThing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &743296310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1560,6 +1572,10 @@ PrefabInstance:
     - target: {fileID: 2114982975062101373, guid: a15df006420bf254b9a04cfb3a3b7970, type: 3}
       propertyPath: m_Name
       value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114982975062101373, guid: a15df006420bf254b9a04cfb3a3b7970, type: 3}
+      propertyPath: m_TagString
+      value: Blocks
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8075490003397487626, guid: a15df006420bf254b9a04cfb3a3b7970, type: 3}

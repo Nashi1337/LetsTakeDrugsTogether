@@ -8,6 +8,8 @@ TagManager:
   - Key
   - Teleporter
   - Anomaly
+  - Undefined
+  - Blocks
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - UI
   - TopDownTriggerZone
   - Key
-  - 
-  - 
-  - 
+  - Block
+  - WeDontFuckWithBlocks
+  - Player
   - 
   - 
   - 
