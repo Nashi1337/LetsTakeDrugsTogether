@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         horizontalPlayerInput = Input.GetAxisRaw("Horizontal");
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
 
+        if(!topDown)
         SwapSprite();
     }
 
