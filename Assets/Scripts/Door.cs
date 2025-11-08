@@ -29,18 +29,22 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalPlayerInput = Input.GetAxisRaw("Vertical");
-        if (verticalPlayerInput > 0 && hasDoorOpened)
+        if (isLocked == false)
         {
-            if(!player.topDown)
-                GoToRoomPosition();
-        }
+            verticalPlayerInput = Input.GetAxisRaw("Vertical");
+            if (verticalPlayerInput > 0 && hasDoorOpened)
+            {
+                if(!player.topDown)
+                    GoToRoomPosition();
+            }
 
-        if (verticalPlayerInput < 0 && hasPlayerEnteredDoor)
-        {
-            if(player.topDown)
-                GoToHallwayPosition();
+            if (verticalPlayerInput < 0 && hasPlayerEnteredDoor)
+            {
+                if(player.topDown)
+                    GoToHallwayPosition();
+            }
         }
+       
     }
 
     private void FixedUpdate()
