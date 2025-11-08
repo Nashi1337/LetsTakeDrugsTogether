@@ -1,7 +1,9 @@
 using System;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public bool topDown = false;
     
     private Rigidbody2D rb;
+    
+    public Animator anim;
 
     private bool justTeleported = false;
     private float lastTeleportTime = 999f;
@@ -37,6 +41,10 @@ public class PlayerController : MonoBehaviour
     {
         horizontalPlayerInput = Input.GetAxisRaw("Horizontal");
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
+        
+        anim.SetFloat("Horizontal", horizontalPlayerInput);
+        anim.SetFloat("Vertical", verticalPlayerInput);
+        anim.SetFloat("Speed", Mathf.Abs((verticalPlayerInput + horizontalPlayerInput) * speed));
 
         if(!topDown)
             SwapSprite();

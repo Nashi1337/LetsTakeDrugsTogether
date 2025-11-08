@@ -16,24 +16,37 @@ public class PaletteSwapper : MonoBehaviour
         if (display == null)
             display = GetComponent<GBDisplayController>();
     }
-
-    private void OnEnable()
-    {
-        paletteRoutine = StartCoroutine(PaletteLoop());
-    }
-
+    
     private void OnDisable()
     {
         if (paletteRoutine != null)
             StopCoroutine(paletteRoutine);
     }
 
-    private IEnumerator PaletteLoop()
+
+
+    public void SwapPaletteStandard()
     {
-        while (true)
-        {
-            display.PaletteCycleNext();
-            yield return new WaitForSeconds(swapInterval);
-        }
+        display.CurrentPalette = 0;
+    }
+    public void SwapPaletteOne()
+    {
+        display.CurrentPalette = 1;
+    }
+    public void SwapPaletteTwo()
+    {
+        display.CurrentPalette = 2;
+    }
+    public void SwapPaletteThree()
+    {
+        display.CurrentPalette = 3;
+    }
+    public void SwapPaletteFor()
+    {
+        display.CurrentPalette = 4;
+    }
+    public void FinishSwapShader()
+    {
+        
     }
 }
