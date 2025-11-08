@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4837941754188533605}
   - component: {fileID: 5703805650105778932}
   - component: {fileID: 8075490003397487626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Blocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8478697849411352580}
   - component: {fileID: 5292800849024034520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
