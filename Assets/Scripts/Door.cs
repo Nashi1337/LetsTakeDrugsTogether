@@ -23,7 +23,10 @@ public class Door : MonoBehaviour
     
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        if(GameObject.Find("Player"))
+            player = GameObject.Find("Player").GetComponent<PlayerController>();
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame

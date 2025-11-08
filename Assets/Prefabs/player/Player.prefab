@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   placeHolder: {fileID: 482531831264310181}
 --- !u!1 &8591035307955635877
 GameObject:
