@@ -20,11 +20,7 @@ public class PlayerController : MonoBehaviour
     private float lastTeleportTime = 999f;
     private float teleportCooldown = 0.1f;
     
-    private bool key1 = false;
-    private bool key2 = false;
-    private bool key3 = false;
-    private bool key4 = false;
-    
+    public CameraController cameraController;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -100,26 +96,17 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("TopDownTriggerZone"))
         {
             ToggleTopDown();
+            CameraPosition targetTransform = other.gameObject.GetComponentInChildren<CameraPosition>();
+            cameraController.currentPosition = targetTransform.gameObject.transform;
         }
 
         if (other.CompareTag("Key"))
         {
-            /**
-            switch (other.GetComponent<Key>().index)
-            {
-                case 1: key1 = true; break;
-                case 2: key2 = true; break;
-                case 3: key3 = true; break;
-                case 4: key4 = true; break;
-                default: break;
-            }
-           */
             KeyEvent keyEvent = other.GetComponent<KeyEvent>();
             if (other.GetComponent<KeyEvent>() != null)
             {
                 keyEvent.DoEvent();
             }
-            //Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Teleporter"))
@@ -149,6 +136,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("TopDownTriggerZone"))
         {
             ToggleTopDown();
+            cameraController.currentPosition = cameraController.playerPosition;
         }
     }
 }
