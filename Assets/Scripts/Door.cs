@@ -34,6 +34,10 @@ public class Door : MonoBehaviour
         {
             if(!player.topDown)
                 GoToRoomPosition();
+        }
+
+        if (verticalPlayerInput < 0 && hasPlayerEnteredDoor)
+        {
             if(player.topDown)
                 GoToHallwayPosition();
         }
@@ -46,14 +50,20 @@ public class Door : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        hasPlayerEnteredDoor = true;
+        if (other.CompareTag("Player"))
+        {
+            hasPlayerEnteredDoor = true;
+            hasDoorOpened = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-        hasPlayerEnteredDoor = false;
+        if (other.CompareTag("Player"))
+        {
+            hasPlayerEnteredDoor = false;
+            hasDoorOpened = false;
+        }
     }
 
     public void TryDoorAnimation()
@@ -79,9 +89,15 @@ public class Door : MonoBehaviour
         hasDoorOpened = false;
     }
 
+    public void UnlockDoor()
+    {
+        isLocked = false;
+    }
+
     public void GoToRoomPosition()
     {
         player.transform.position = roomTransform.position;
+        hasDoorOpened = false;
     }
 
     public void GoToHallwayPosition()
@@ -92,7 +108,10 @@ public class Door : MonoBehaviour
     public void ChangingDoorSprites(bool lockedBool, bool closedBool, bool openBool)
     {
         lockedDoor.SetActive(lockedBool);
-        closedDoor.SetActive(closedBool);
-        openDoor.SetActive(openBool);
+        if (lockedBool == false)
+        {
+            closedDoor.SetActive(closedBool);
+            openDoor.SetActive(openBool);
+        }
     }
 }
