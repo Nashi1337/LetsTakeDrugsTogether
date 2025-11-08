@@ -52,24 +52,6 @@ public class PlayerController : MonoBehaviour
 
     void SwapSprite()
     {
-        // Right
-        if (horizontalPlayerInput > 0)
-        {
-            transform.localScale = new Vector3(
-                Mathf.Abs(transform.localScale.x),
-                transform.localScale.y,
-                transform.localScale.z
-            );
-        }
-        // Left
-        else if (horizontalPlayerInput < 0)
-        {
-            transform.localScale = new Vector3(
-                -1 * Mathf.Abs(transform.localScale.x),
-                transform.localScale.y,
-                transform.localScale.z
-            );
-        }
     }
 
     void FixedUpdate()
