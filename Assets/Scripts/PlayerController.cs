@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
 
         if(!topDown)
-        SwapSprite();
+            SwapSprite();
     }
 
     void SwapSprite()
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 case 4: key4 = true; break;
                 default: break;
             }
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Teleporter"))
