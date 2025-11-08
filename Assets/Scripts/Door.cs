@@ -62,7 +62,7 @@ public class Door : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             hasPlayerEnteredDoor = false;
-            hasDoorOpened = true;
+            hasDoorOpened = false;
         }
     }
 
