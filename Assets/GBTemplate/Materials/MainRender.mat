@@ -94,7 +94,7 @@ Material:
     - _EmissionEnabled: 0
     - _EnableExternalAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fade: 0.25
+    - _Fade: 0.184
     - _Fade_Max_Tolerance: 2
     - _FlipbookMode: 0
     - _GlossMapScale: 0
