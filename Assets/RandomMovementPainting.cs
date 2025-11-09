@@ -22,6 +22,8 @@ public class RandomMovementPainting : MonoBehaviour
     private Transform player;
     private Vector2 wanderDirection = Vector2.right;
 
+    public GameObject spawnCorrectPainting;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -117,7 +119,10 @@ public class RandomMovementPainting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
+        {
             Destroy(gameObject);
+            spawnCorrectPainting.SetActive(true);
+        }
     }
 }
