@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 2eb60f0af1cec384c95dea2791e93ce1
+guid: f076ba52a50a3ac4ba2ce5b126ee4516
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4618074426923269420
-    second: Hallway_Decke_Boden_0
-  - first:
-      213: 4716539746203057199
-    second: Hallway_Decke_Boden_1
-  - first:
-      213: -1385268691504400521
-    second: Hallway_Decke_Boden_2
+      213: -3760684972667085112
+    second: Tile12_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hallway_Decke_Boden_0
+      name: Tile12_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 72
-        width: 77
-        height: 72
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 26, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d24cecb6cd49efb0800000000000000
-      internalID: -4618074426923269420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hallway_Decke_Boden_1
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 72
-        width: 77
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 26, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76667ff49a423d441a6022f27d23e0f4
-      internalID: -376291176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hallway_Decke_Boden_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 68
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f09a0135678226d49932bbf965ba7936
-      internalID: 1196052190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hallway_Decke_Boden_3
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 0
-        width: 92
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06c61d0f47fe10442a88043871dfa0b5
-      internalID: -1106757639
+      spriteID: 8ce570c31fc5fcbc0800000000000000
+      internalID: -3760684972667085112
       vertices: []
       indices: 
       edges: []
@@ -210,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e3e865c8db5f60e40af28753e225544c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -220,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hallway_Decke_Boden_0: -4618074426923269420
-      Hallway_Decke_Boden_1: -376291176
-      Hallway_Decke_Boden_2: 1196052190
-      Hallway_Decke_Boden_3: -1106757639
+      Tile12_0: -3760684972667085112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
