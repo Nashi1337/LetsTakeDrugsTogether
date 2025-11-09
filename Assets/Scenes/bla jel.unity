@@ -2326,7 +2326,7 @@ PrefabInstance:
     - target: {fileID: 6059406099436027061, guid: 112d6bd5f2e514d48981f371c7f1b4ec, type: 3}
       propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1912905887}
+      objectReference: {fileID: 1424395317}
     - target: {fileID: 6059406099436027061, guid: 112d6bd5f2e514d48981f371c7f1b4ec, type: 3}
       propertyPath: myEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
@@ -2534,7 +2534,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -3180,6 +3180,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90585633969500243, guid: 01d95df93a330784592f05369c78f285, type: 3}
+      propertyPath: m_Size.x
+      value: 1.158796
+      objectReference: {fileID: 0}
+    - target: {fileID: 90585633969500243, guid: 01d95df93a330784592f05369c78f285, type: 3}
+      propertyPath: m_Size.y
+      value: 6.3168693
+      objectReference: {fileID: 0}
+    - target: {fileID: 90585633969500243, guid: 01d95df93a330784592f05369c78f285, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07939798
+      objectReference: {fileID: 0}
+    - target: {fileID: 90585633969500243, guid: 01d95df93a330784592f05369c78f285, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.6584346
+      objectReference: {fileID: 0}
     - target: {fileID: 1508803305826091632, guid: 01d95df93a330784592f05369c78f285, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.19
@@ -3967,6 +3983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4490552195587996707, guid: 5b2a8b16802cff74fbb2ab7bf80593db, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6303630553313327969, guid: 5b2a8b16802cff74fbb2ab7bf80593db, type: 3}
       propertyPath: m_Name
       value: ShrekLeft
@@ -3989,6 +4009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3478351521163779691}
     m_Modifications:
+    - target: {fileID: 1057477310462177611, guid: 48f00b6c6f3967d45a8038a8d2521047, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6312294087364652230, guid: 48f00b6c6f3967d45a8038a8d2521047, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.025

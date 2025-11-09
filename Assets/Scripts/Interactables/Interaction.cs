@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
@@ -12,8 +13,29 @@ public class Interaction : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Blocks"))
+        {
+            print(other.gameObject.name);
+            Interactable interactable = other.gameObject.GetComponent<Interactable>();
+            if (interactable != null && Input.GetKeyDown(KeyCode.E))
+            {
+                print("bluedabedidabedei");
+                if (interactable != null)
+                {
+                    print(interactable.name);
+                    interactable.InvokeMyEvent();
+                }
+            }
+                
+        }
+    }
+
     void Update()
     {
+        /**
         horizontalPlayerInput = Input.GetAxisRaw("Horizontal");
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
         
@@ -43,5 +65,6 @@ public class Interaction : MonoBehaviour
                    ;
             }
         }
+        */
     }
 }
