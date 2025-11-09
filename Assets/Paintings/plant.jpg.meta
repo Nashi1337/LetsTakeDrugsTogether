@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 16fd970775f70ef43b1337acf5e68fde
+guid: 8cbdb77d6f287c443b8e981ac3521a6d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8725178146937246454
-    second: Smash-Mouth_Steve-Harwell_All-Star_2023-scaled_0
+      213: 8591533231565066105
+    second: plant_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smash-Mouth_Steve-Harwell_All-Star_2023-scaled_0
+      name: plant_0
       rect:
         serializedVersion: 2
-        x: 692
+        x: 0
         y: 0
-        width: 651
-        height: 1152
+        width: 434
+        height: 600
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 30, y: 0, z: 605, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0dedcd04b0f9e680800000000000000
-      internalID: -8725178146937246454
+      spriteID: 97f466744f14b3770800000000000000
+      internalID: 8591533231565066105
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 503446ccf4e98a4499d9f05d7abddf86
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Smash-Mouth_Steve-Harwell_All-Star_2023-scaled_0: -8725178146937246454
+      plant_0: 8591533231565066105
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

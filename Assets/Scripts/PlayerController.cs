@@ -7,10 +7,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    // Horizontal player keyboard input
-    //  -1 = Left
+    //  -1 = Left | down
     //   0 = No input
-    //   1 = Right
+    //   1 = Right | up
     private float horizontalPlayerInput = 0;
     private float verticalPlayerInput = 0;
 
@@ -24,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private bool justTeleported = false;
     private float lastTeleportTime = 999f;
     private float teleportCooldown = 0.1f;
+    private bool inverted = false;
     
     public CameraController cameraController;
     void Start()
@@ -41,6 +41,12 @@ public class PlayerController : MonoBehaviour
     {
         horizontalPlayerInput = Input.GetAxisRaw("Horizontal");
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
+
+        if (inverted)
+        {
+            horizontalPlayerInput *= -1;
+            verticalPlayerInput *= -1;
+        }
         
         anim.SetFloat("Horizontal", horizontalPlayerInput);
         anim.SetFloat("Vertical", verticalPlayerInput);
@@ -142,5 +148,10 @@ public class PlayerController : MonoBehaviour
             if(cameraController != null)
                 cameraController.currentPosition = cameraController.playerPosition;
         }
+    }
+
+    public void InvertControls(bool value)
+    {
+        inverted = value;
     }
 }
