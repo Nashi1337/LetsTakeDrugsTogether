@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private bool inverted = false;
 
     public Transform evilTeleport;
+    public Transform evilTeleport2;
     
     public CameraController cameraController;
     void Start()
@@ -112,6 +113,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("EvilTeleport"))
         {
             transform.position = evilTeleport.position;
+        }
+        
+        if (other.CompareTag("EvilTeleport2"))
+        {
+            transform.position = evilTeleport2.position;
         }
         
         if (other.CompareTag("Teleporter"))

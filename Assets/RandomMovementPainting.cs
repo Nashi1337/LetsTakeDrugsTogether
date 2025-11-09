@@ -24,12 +24,16 @@ public class RandomMovementPainting : MonoBehaviour
 
     public GameObject spawnCorrectPainting;
     
+    public ThirdRoom thirdRoom;
+    public bool isKermit;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 
         rb.gravityScale = 0f;
         rb.linearDamping = 3f;  // smooth floaty movement
+        thirdRoom = FindObjectOfType<ThirdRoom>();
     }
 
     private void Start()
@@ -121,8 +125,15 @@ public class RandomMovementPainting : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (!isKermit)
+                thirdRoom.shrek = true;
+            else
+            {
+                thirdRoom.kermit = true;
+            }
             Destroy(gameObject);
             spawnCorrectPainting.SetActive(true);
+            
         }
     }
 }
