@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
@@ -6,14 +7,55 @@ public class Interaction : MonoBehaviour
     private float verticalPlayerInput = 0;
     public LayerMask rayLayer;
     public GameObject placeHolder;
+    public bool canDoShrek;
     void Start()
     {
         
     }
 
     // Update is called once per frame
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Blocks"))
+        {
+            print(other.gameObject.name);
+            Interactable interactable = other.gameObject.GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                canDoShrek = true;
+            }
+                
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Blocks"))
+        {
+            print(other.gameObject.name);
+            Interactable interactable = other.gameObject.GetComponent<Interactable>();
+
+            if (canDoShrek && Input.GetKey(KeyCode.E))
+            {
+                print(interactable.name);
+                interactable.InvokeMyEvent();
+            }
+                
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Blocks"))
+        { 
+            canDoShrek = false;       
+        }
+    }
+
     void Update()
     {
+        /**
         horizontalPlayerInput = Input.GetAxisRaw("Horizontal");
         verticalPlayerInput = Input.GetAxisRaw("Vertical");
         
@@ -43,5 +85,6 @@ public class Interaction : MonoBehaviour
                    ;
             }
         }
+        */
     }
 }

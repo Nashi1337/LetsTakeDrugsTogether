@@ -12,6 +12,7 @@ TagManager:
   - Blocks
   - PressurePlate
   - EvilTeleport
+  - EvilTeleport2
   layers:
   - Default
   - TransparentFX

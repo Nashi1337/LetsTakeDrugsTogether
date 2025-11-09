@@ -49,7 +49,15 @@ public class PushableObject : MonoBehaviour
     {
         if (currentTime <= 0)
         {
-            isAttached = true;
+            if (!isAttached)
+            {
+                isAttached = true;
+                
+            }
+            else
+            {
+                DetachFromPlayer();
+            }
             print("uwu");
             currentTime = maxTime;
         }

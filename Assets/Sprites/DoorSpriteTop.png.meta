@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3ba3fad41ff36a340b57c904e6ed4048
+guid: 9d85d6f5040cc4048b55c73fc0f0d2f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -354456087502146510
-    second: 302994786-256-k878098_0
+      213: -8593486197683123779
+    second: DoorSpriteTop_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,10 +98,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WindowsStoreApps
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 302994786-256-k878098_0
+      name: DoorSpriteTop_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
-        width: 128
-        height: 200
+        x: 3
+        y: 18
+        width: 61
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 234b5fff018b41bf0800000000000000
-      internalID: -354456087502146510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 302994786-256-k878098_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 200
-        width: 128
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b172e01dc1f0274cad90ea819ef84e0
-      internalID: 1138698693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 302994786-256-k878098_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36b9692937327ae44ac97ecabcda90d4
-      internalID: 1760675595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 302994786-256-k878098_3
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d13b7410d992fc94ea002af878eb69fc
-      internalID: 77088757
+      spriteID: db900ec55ddcdb880800000000000000
+      internalID: -8593486197683123779
       vertices: []
       indices: 
       edges: []
@@ -204,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: efcedcaed16159344b2588a7a11aba9a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -214,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      302994786-256-k878098_0: -354456087502146510
-      302994786-256-k878098_1: 1138698693
-      302994786-256-k878098_2: 1760675595
-      302994786-256-k878098_3: 77088757
+      DoorSpriteTop_0: -8593486197683123779
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
