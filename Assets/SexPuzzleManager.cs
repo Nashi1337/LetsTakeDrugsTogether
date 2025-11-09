@@ -9,6 +9,8 @@ public class SexPuzzleManager : MonoBehaviour
 
     private bool solved = false;
 
+    public MeshRenderer mainRenderer;
+
     private void Update()
     {
         if (solved) return;
@@ -22,5 +24,10 @@ public class SexPuzzleManager : MonoBehaviour
 
         solved = true;
         onPuzzleSolved?.Invoke();
+    }
+
+    public void OnPuzzleSolved()
+    {
+        mainRenderer.material.shader = Shader.Find("Particles/Standard Unlit");
     }
 }
