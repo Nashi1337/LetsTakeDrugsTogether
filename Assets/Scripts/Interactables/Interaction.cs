@@ -7,29 +7,49 @@ public class Interaction : MonoBehaviour
     private float verticalPlayerInput = 0;
     public LayerMask rayLayer;
     public GameObject placeHolder;
+    public bool canDoShrek;
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Blocks"))
+        {
+            print(other.gameObject.name);
+            Interactable interactable = other.gameObject.GetComponent<Interactable>();
+            if (interactable != null)
+            {
+                canDoShrek = true;
+            }
+                
+        }
+    }
+
     public void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Blocks"))
         {
             print(other.gameObject.name);
             Interactable interactable = other.gameObject.GetComponent<Interactable>();
-            if (interactable != null && Input.GetKeyDown(KeyCode.E))
+
+            if (canDoShrek && Input.GetKey(KeyCode.E))
             {
-                print("bluedabedidabedei");
-                if (interactable != null)
-                {
-                    print(interactable.name);
-                    interactable.InvokeMyEvent();
-                }
+                print(interactable.name);
+                interactable.InvokeMyEvent();
             }
                 
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Blocks"))
+        { 
+            canDoShrek = false;       
         }
     }
 
