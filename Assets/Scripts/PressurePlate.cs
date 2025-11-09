@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PressurePlate : MonoBehaviour
 {
      public UnityEvent myEvent = new UnityEvent();
+     
     void Update()
     {
         
@@ -28,4 +29,7 @@ public class PressurePlate : MonoBehaviour
             }
         }
     }
+    
+    
+    
 }

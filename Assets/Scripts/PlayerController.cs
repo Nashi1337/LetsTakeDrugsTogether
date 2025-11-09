@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private float lastTeleportTime = 999f;
     private float teleportCooldown = 0.1f;
     private bool inverted = false;
+
+    public Transform evilTeleport;
     
     public CameraController cameraController;
     void Start()
@@ -107,6 +109,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (other.CompareTag("EvilTeleport"))
+        {
+            transform.position = evilTeleport.position;
+        }
+        
         if (other.CompareTag("Teleporter"))
         {
             if (justTeleported && Time.time - lastTeleportTime < teleportCooldown)

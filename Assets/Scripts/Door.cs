@@ -46,6 +46,7 @@ public class Door : MonoBehaviour
                 if (!player.topDown)
                 {
                     GoToRoomPosition();
+                    if(currentDoorState != DoorState.Finished)
                     currentDoorState = DoorState.Entered;
                     EnteredRoomEvent.Invoke();
                 }

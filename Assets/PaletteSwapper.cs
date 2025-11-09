@@ -35,7 +35,7 @@ public class PaletteSwapper : MonoBehaviour
     }
     public void SwapPaletteTwo()
     {
-        display.UpdateColorPalette(2);
+        display.UpdateColorPalette(37);
     }
     public void SwapPaletteThree()
     {
@@ -48,5 +48,11 @@ public class PaletteSwapper : MonoBehaviour
     public void FinishSwapShader()
     {
         
+    }
+
+    public void SwapIntoRandomPalette()
+    {
+        int myPalette = UnityEngine.Random.Range(1,37);
+        display.UpdateColorPalette(myPalette);
     }
 }
