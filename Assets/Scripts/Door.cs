@@ -21,6 +21,7 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject lockedDoor;
     [SerializeField] private GameObject closedDoor;
     [SerializeField] private GameObject openDoor;
+    public bool isSexRoom = false;
 
     public enum DoorState { NotEntered, Entered, Finished};
     public DoorState currentDoorState = DoorState.NotEntered;
@@ -47,12 +48,12 @@ public class Door : MonoBehaviour
                 {
                     GoToRoomPosition();
                     if(currentDoorState != DoorState.Finished)
-                    currentDoorState = DoorState.Entered;
+                        currentDoorState = DoorState.Entered;
                     EnteredRoomEvent.Invoke();
                 }
             }
 
-            if (verticalPlayerInput < 0 && hasPlayerEnteredDoor && currentDoorState == DoorState.Finished)
+            if (verticalPlayerInput < 0 && hasPlayerEnteredDoor && (currentDoorState == DoorState.Finished || isSexRoom))
             {
                 if(player.topDown)
                     GoToHallwayPosition();
@@ -136,8 +137,8 @@ public class Door : MonoBehaviour
     public void RoomFinished()
     {
         if(currentDoorState != DoorState.Finished)
-        myEvent.Invoke();
-       currentDoorState = DoorState.Finished;
+            myEvent.Invoke();
+        currentDoorState = DoorState.Finished;
         
     }
 }
