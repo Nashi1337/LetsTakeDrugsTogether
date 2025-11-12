@@ -33,7 +33,6 @@ public class Interaction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Blocks"))
         {
-            print(other.gameObject.name);
             Interactable interactable = other.gameObject.GetComponent<Interactable>();
 
             if (canDoShrek && Input.GetKey(KeyCode.E))

@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class KeyEvent : MonoBehaviour
 {
     public UnityEvent myEvent = new UnityEvent();
+    public AudioClip SFXcollected;
     void Start()
     {
         
@@ -19,5 +20,6 @@ public class KeyEvent : MonoBehaviour
     {
         myEvent.Invoke();
         this.gameObject.SetActive(true);
+        AudioManager.Instance.PlaySFX(SFXcollected);
     }
 }

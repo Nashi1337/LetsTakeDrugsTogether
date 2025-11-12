@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
     public bool hasPlayerEnteredDoor;
     public bool hasDoorOpened;
     public Animator doorAnimator;
+    public AudioClip SFXopen;
 
     public float verticalPlayerInput;
     private PlayerController player;
@@ -50,6 +51,8 @@ public class Door : MonoBehaviour
                     if(currentDoorState != DoorState.Finished)
                         currentDoorState = DoorState.Entered;
                     EnteredRoomEvent.Invoke();
+                    AudioManager.Instance.PlaySFX(SFXopen);
+
                 }
             }
 

@@ -8,6 +8,7 @@ public class SexPuzzlePiece : MonoBehaviour
     public bool IsInCorrectPosition { get; private set; }
     private Rigidbody2D rb;
 
+    public AudioClip SEX_SFX;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

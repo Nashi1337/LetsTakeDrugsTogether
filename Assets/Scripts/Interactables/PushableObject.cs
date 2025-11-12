@@ -11,6 +11,8 @@ public class PushableObject : MonoBehaviour
     private Collider2D col;
     private PlayerController player;
 
+    public AudioClip SFX;
+
     public float maxTime = 1f;
     public float currentTime;
     private void Awake()
@@ -52,7 +54,6 @@ public class PushableObject : MonoBehaviour
             if (!isAttached)
             {
                 isAttached = true;
-                
             }
             else
             {

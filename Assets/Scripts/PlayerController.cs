@@ -26,8 +26,10 @@ public class PlayerController : MonoBehaviour
 
     public Transform evilTeleport;
     public Transform evilTeleport2;
-    
+
     public CameraController cameraController;
+
+    public AudioClip fall_down_SFX;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -55,8 +57,18 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Vertical", verticalPlayerInput);
         anim.SetFloat("Speed", Mathf.Abs((verticalPlayerInput + horizontalPlayerInput) * speed));
 
-        if(!topDown)
+        if (!topDown)
             SwapSprite();
+
+
+        if (horizontalPlayerInput != 0 || verticalPlayerInput != 0)
+        {
+            AudioManager.Instance.PlayFootsteps();
+        }
+        else if (horizontalPlayerInput == 0 || verticalPlayerInput == 0)
+        {
+            AudioManager.Instance.StopFootsteps();
+        }
     }
 
     void SwapSprite()
@@ -97,8 +109,13 @@ public class PlayerController : MonoBehaviour
         {
             ToggleTopDown();
             CameraPosition targetTransform = other.gameObject.GetComponentInChildren<CameraPosition>();
-            if(cameraController != null)
+            if (cameraController != null)
                 cameraController.currentPosition = targetTransform.gameObject.transform;
+
+            if (other.transform.name.Equals("SexPuzzleRoomTemplate"))
+            { AudioManager.Instance.FadeToTrack(other.transform.name); }
+            else
+            { AudioManager.Instance.FadeToTrack(other.transform.parent.name); }
         }
 
         if (other.CompareTag("Key"))
@@ -113,10 +130,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("EvilTeleport"))
         {
             transform.position = evilTeleport.position;
+            AudioManager.Instance.PlaySFX(fall_down_SFX);
         }
         
         if (other.CompareTag("EvilTeleport2"))
         {
+            AudioManager.Instance.PlaySFX(fall_down_SFX);
             transform.position = evilTeleport2.position;
         }
         

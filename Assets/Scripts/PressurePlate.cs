@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PressurePlate : MonoBehaviour
 {
      public UnityEvent myEvent = new UnityEvent();
-     
+    public AudioClip SFX;
     void Update()
     {
         
@@ -22,9 +22,9 @@ public class PressurePlate : MonoBehaviour
         if (other.CompareTag("Blocks"))
         {
             bool isAttached = other.GetComponent<PushableObject>().isAttached;
-
             if (!isAttached)
             {
+                AudioManager.Instance.PlaySFX(SFX);
                 DoMyEvent();
             }
         }

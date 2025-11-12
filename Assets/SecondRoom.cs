@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class SecondRoom : MonoBehaviour
 {
     public int shrekCounter = 0;
-
     public UnityEvent myEvent;
     void Start()
     {

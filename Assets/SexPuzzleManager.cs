@@ -11,6 +11,8 @@ public class SexPuzzleManager : MonoBehaviour
 
     public MeshRenderer mainRenderer;
 
+    public AudioClip SEX_SFX;
+
     private void Update()
     {
         if (solved) return;
@@ -29,5 +31,6 @@ public class SexPuzzleManager : MonoBehaviour
     public void OnPuzzleSolved()
     {
         mainRenderer.material.shader = Shader.Find("Particles/Standard Unlit");
+        AudioManager.Instance.FadeToTrack("Söder Reveal");
     }
 }

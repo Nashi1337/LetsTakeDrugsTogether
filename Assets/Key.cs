@@ -42,12 +42,16 @@ public class Key : MonoBehaviour
                 float delta = dist - preferredDistance;
                 rb.AddForce(dir * (delta * attractionStrength), ForceMode2D.Force);
             }
-            
+
             float repelRadius = preferredDistance * 0.7f;
             if (dist < repelRadius)
             {
                 float delta = repelRadius - dist;
                 rb.AddForce(-dir * (delta * repulsionStrength), ForceMode2D.Force);
+            }
+            if (dist < repelRadius / 2)
+            {
+                AudioManager.Instance.PlayKeyClank();
             }
         }
 
@@ -68,6 +72,6 @@ public class Key : MonoBehaviour
 
         var col = GetComponent<Collider2D>();
         if (col != null)
-            col.enabled= false;
+            col.enabled = false;
     }
 }
